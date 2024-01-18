@@ -15,7 +15,7 @@ const Main = () => {
     },
     {
       id: crypto.randomUUID(),
-      title: "JavaScript and Jquery",
+      title: "JavaScript",
       author: "Jon Duckett",
       thumbnail: "https://i.ibb.co/z8c1m0Q/book.png",
       price: 62,
@@ -24,7 +24,7 @@ const Main = () => {
     },
     {
       id: crypto.randomUUID(),
-      title: "JavaScript and Jquery",
+      title: "Php",
       author: "Jon Duckett",
       thumbnail: "https://i.ibb.co/z8c1m0Q/book.png",
       price: 62,
@@ -33,7 +33,7 @@ const Main = () => {
     },
     {
       id: crypto.randomUUID(),
-      title: "JavaScript and Jquery",
+      title: "Paython",
       author: "Jon Duckett",
       thumbnail: "https://i.ibb.co/z8c1m0Q/book.png",
       price: 62,
@@ -55,9 +55,16 @@ const Main = () => {
     );
   };
 
+  function handleSearch(searchTerm) {  
+   const filtered = defaultBooks.filter((book) =>
+       book.title.toLowerCase().includes(searchTerm.toLowerCase())
+   ); 
+   setBooks([...filtered]); 
+}
+
   return (
     <div className="my-10 lg:my-14">
-      <MainHeader />
+      <MainHeader  onSearch={handleSearch}  />
       <Books books={books} isFavorite={handleFavorite} />
     </div>
   );
