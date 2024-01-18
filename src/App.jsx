@@ -1,10 +1,13 @@
+import Header from "./Components/Header"
+import Main from "./Components/Main/Main"
 
 
 function App() { 
 
   return (
     <> 
-      <h1>Vite + React</h1> 
+    <Header/>
+    <Main/>
     </>
   )
 }
