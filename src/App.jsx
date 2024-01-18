@@ -1,15 +1,15 @@
-import Header from "./Components/Header"
-import Main from "./Components/Main/Main"
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Main from "./Components/Main/Main";
 
-
-function App() { 
-
+function App() {
   return (
-    <> 
-    <Header/>
-    <Main/>
+    <>
+      <Header />
+      <Main />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
