@@ -1,5 +1,14 @@
+import { useState } from "react";
 
-const SortFilter = () => {
+const SortFilter = ({sortBy}) => {
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleSelectChange = (e) => {
+    const value = e.target.value;
+    setSelectedValue(value);
+    sortBy(selectedValue);
+ 
+  };
    return (
       <div className="flex items-stretch space-x-3">
             {/* Sort */}
@@ -7,6 +16,8 @@ const SortFilter = () => {
               className="cursor-pointer rounded-md border px-4 py-2 text-center text-gray-600"
               name="sortBy"
               id="sortBy"
+              value={selectedValue}
+              onChange={handleSelectChange}
             >
               <option value="">Sort</option>
               <option value="name_asc">Name (A-Z)</option>
